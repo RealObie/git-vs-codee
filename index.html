@@ -1136,5 +1136,56 @@ console.log("MediBloom Pharmacy website loaded successfully.");
       #login-btn, #cart-btn { display: inline-flex !important; }
       #logout-btn { display: inline-flex; }  /* lets your JS keep hiding it */
     </style>
+
+/* ---- Header spacing fix ---- */
+
+/* 1. Give the header more room than the page content */
+.nav-inner {
+  width: min(1400px, 100% - 48px) !important;
+  gap: 16px !important;
+}
+
+/* 2. Never let menu text or buttons wrap */
+.nav-links,
+.nav-links a,
+.dropdown-toggle,
+.shop-btn,
+.user-actions .icon-btn {
+  white-space: nowrap !important;
+}
+
+/* 3. Tighter menu */
+.nav-links {
+  gap: 20px !important;
+  font-size: 15px !important;
+  flex-wrap: nowrap !important;
+}
+.dropdown-toggle { gap: 4px !important; }
+
+/* 4. Smaller buttons on the right */
+.shop-btn {
+  padding: 10px 18px !important;
+  font-size: 15px !important;
+}
+.user-actions .icon-btn {
+  padding: 0 12px !important;
+  font-size: 14px !important;
+}
+.nav-actions { gap: 8px !important; }
+
+/* 5. Slightly smaller logo so it doesn't eat space */
+.logo img { height: 56px; width: auto; }
+
+/* 6. On medium laptops, hide the Login / Cart words and keep icons */
+@media (max-width: 1350px) {
+  .user-actions .btn-text { display: none !important; }
+  #cart-btn > span:not(#cart-count) { font-size: 14px; }
+}
+
+/* 7. On smaller laptops, hide the Shop online button text spacing */
+@media (max-width: 1200px) {
+  .nav-links { gap: 14px !important; font-size: 14px !important; }
+  .shop-btn { padding: 10px 14px !important; }
+}
 </body>
 </html>
