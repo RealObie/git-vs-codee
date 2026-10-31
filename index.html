@@ -1111,5 +1111,30 @@ console.log("MediBloom Pharmacy website loaded successfully.");
   </script>
     <!-- Your existing scripts might be here -->
     <script src="app.js"></script>
+    <style>
+      .user-actions {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 8px !important;
+        width: auto !important;
+        flex-shrink: 0 !important;
+      }
+      #login-btn, #logout-btn, #cart-btn {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        width: auto !important;
+        min-width: 0 !important;
+        height: 40px !important;
+        padding: 0 14px !important;
+        white-space: nowrap !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+      }
+      #login-btn, #cart-btn { display: inline-flex !important; }
+      #logout-btn { display: inline-flex; }  /* lets your JS keep hiding it */
+    </style>
 </body>
 </html>
