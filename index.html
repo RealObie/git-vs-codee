@@ -528,48 +528,56 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .adv-card {
     height: 300px;
   }
-  /* --- New Header Actions --- */
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Adjust spacing between buttons */
+  
+  /* Login / Logout / Cart row */
+.user-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
-/* Style the Login/Logout/Cart buttons to match your other icons */
-.icon-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: transparent;
-    border: 1px solid #ddd; /* Light border like your search icon */
-    border-radius: 50px; /* Makes them pill-shaped */
-    padding: 8px 16px;
-    color: #333;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* Override the square icon-button style for buttons that have text */
+.user-actions .icon-btn {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
+  height: 40px;
+  padding: 0 14px;
+  white-space: nowrap;       /* keeps "Cart (0)" on one line */
+  font-size: 15px;
+  font-weight: 600;
+}
+.user-actions .icon-btn svg {
+  flex-shrink: 0;
 }
 
-/* Hover effect */
-.icon-btn:hover {
-    background: #f0f0f0;
-    border-color: #bbb;
-}
-
-/* Style for the greeting text */
 #user-greeting {
-    font-weight: 600;
-    color: #1e7a32; /* Your green color */
-    font-size: 14px;
-    margin: 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink);
+}
+#user-greeting:empty {
+  display: none;             /* no empty gap when logged out */
 }
 
-/* Hide the text on smaller screens if needed (optional) */
+/* Cart count badge */
+#cart-count {
+  font-weight: 700;
+}
+
+/* Smaller laptops: icons only, so the header still fits */
+@media (max-width: 1250px) {
+  .user-actions .btn-text { display: none; }
+  .user-actions .icon-btn { padding: 0 11px; }
+}
 @media (max-width: 1100px) {
-    .btn-text {
-        display: none; /* Only show icons on smaller screens */
-    }
+  #user-greeting { display: none; }
 }
 }
   </style>
