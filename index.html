@@ -528,6 +528,49 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .adv-card {
     height: 300px;
   }
+  /* --- New Header Actions --- */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing between buttons */
+}
+
+/* Style the Login/Logout/Cart buttons to match your other icons */
+.icon-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid #ddd; /* Light border like your search icon */
+    border-radius: 50px; /* Makes them pill-shaped */
+    padding: 8px 16px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.icon-btn:hover {
+    background: #f0f0f0;
+    border-color: #bbb;
+}
+
+/* Style for the greeting text */
+#user-greeting {
+    font-weight: 600;
+    color: #1e7a32; /* Your green color */
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+/* Hide the text on smaller screens if needed (optional) */
+@media (max-width: 1100px) {
+    .btn-text {
+        display: none; /* Only show icons on smaller screens */
+    }
+}
 }
   </style>
 </head>
